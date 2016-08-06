@@ -1,9 +1,11 @@
 import {Component} from 'angular2/core';
 import {MediaItemComponent} from './media-item.component';
+import {categortListPipe} from './category-list.pipe';
 
 @Component({
     selector: 'media-item-list',
     directives: [MediaItemComponent],
+    pipes : [categortListPipe],
     templateUrl: 'app/media-item-list.component.html',
     styleUrls: ['app/media-item-list.component.css']
 })

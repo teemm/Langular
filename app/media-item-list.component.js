@@ -1,4 +1,4 @@
-System.register(['angular2/core', './media-item.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './media-item.component', './category-list.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './media-item.component'], function(exports_1,
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, media_item_component_1;
+    var core_1, media_item_component_1, category_list_pipe_1;
     var MediaItemListComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', './media-item.component'], function(exports_1,
             },
             function (media_item_component_1_1) {
                 media_item_component_1 = media_item_component_1_1;
+            },
+            function (category_list_pipe_1_1) {
+                category_list_pipe_1 = category_list_pipe_1_1;
             }],
         execute: function() {
             MediaItemListComponent = (function () {
@@ -74,6 +77,7 @@ System.register(['angular2/core', './media-item.component'], function(exports_1,
                     core_1.Component({
                         selector: 'media-item-list',
                         directives: [media_item_component_1.MediaItemComponent],
+                        pipes: [category_list_pipe_1.categortListPipe],
                         templateUrl: 'app/media-item-list.component.html',
                         styleUrls: ['app/media-item-list.component.css']
                     }), 
