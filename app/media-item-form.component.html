@@ -13,7 +13,8 @@
         </li>
         <li>
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" ngControl="name" required>
+            <input type="text" name="name" id="name" ngControl="name" required #name="ngForm">
+            <div class="error" *ngIf="name.errors?.pattern">name is invaled</div>
         </li>
         <li>
             <label for="category">Category</label>
@@ -28,7 +29,8 @@
         </li>
         <li>
             <label for="year">Year</label>
-            <input type="text" name="year" id="year" ngControl="year" maxlength="4">
+            <input type="text" name="year" id="year" ngControl="year" maxlength="4" #year="ngForm">
+            <div class="error" *ngIf="year.errors?.year">most be betwen {{year.errors?.year.min}} and {{year.errors?.year.max}} </div>
         </li>
     </ul>
     <button type="submit" [disabled]="!form.valid" >Save</button>
