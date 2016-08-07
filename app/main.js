@@ -1,8 +1,7 @@
-System.register(['angular2/platform/browser', './app.component', './media-item.service', 'angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/platform/browser', './app.component', './media-item.service', 'angular2/core', './provide'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var browser_1, app_component_1, media_item_service_1, core_1;
-    var lookuplists;
+    var browser_1, app_component_1, media_item_service_1, core_1, provide_1;
     return {
         setters:[
             function (browser_1_1) {
@@ -16,14 +15,14 @@ System.register(['angular2/platform/browser', './app.component', './media-item.s
             },
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (provide_1_1) {
+                provide_1 = provide_1_1;
             }],
         execute: function() {
-            lookuplists = {
-                mediums: ['Movides', 'Series']
-            };
             browser_1.bootstrap(app_component_1.AppComponent, [
                 media_item_service_1.MediaItemService,
-                core_1.provide('LOOKUP_LISTS', { useValue: lookuplists })
+                core_1.provide(provide_1.LOOKUP_LISTS, { useValue: provide_1.lookupLists })
             ]);
         }
     }
