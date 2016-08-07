@@ -42,7 +42,7 @@ System.register(['angular2/core', './media-item.component', './category-list.pip
                 MediaItemListComponent.prototype.getMediaItems = function (medium) {
                     var _this = this;
                     this.medium = medium;
-                    this.mediaItemService.get()
+                    this.mediaItemService.get(medium)
                         .subscribe(function (mediaItems) {
                         _this.mediaItems = mediaItems;
                     });

@@ -70,8 +70,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                         }
                     ];
                 }
-                MediaItemService.prototype.get = function () {
-                    return this.http.get('mediaitems')
+                MediaItemService.prototype.get = function (medium) {
+                    var searchParam = new http_1.URLSearchParams();
+                    searchParam.append('medium', medium);
+                    return this.http.get('mediaitems', { search: searchParam })
                         .map(function (response) {
                         return response.json().mediaItems;
                     });
