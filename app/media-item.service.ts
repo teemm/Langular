@@ -7,25 +7,23 @@ export class MediaItemService {
     constructor(private http: Http) {}
     
     get(medium) {
-        var searchParam = new URLSearchParams();
-        searchParam.append('medium', medium);
-        return this.http.get('mediaitems', {search:searchParam})
+        var searchParams = new URLSearchParams();
+        searchParams.append('medium', medium);
+        return this.http.get('mediaitems', {search: searchParams})
             .map(response => {
                 return response.json().mediaItems;
             });
     }
     
     add(mediaItem) {
-        var headers = new Headers({'Content-Type':'application/json'});
-        return this.http.post('mediaitems', JSON.stringify(mediaItem), {headers: headers})
-            .map(response => {
-
-            })
+        var headers = new Headers({ 'Content-Type': 'application/json' });
+        return this.http.post('mediaitems', JSON.stringify(mediaItem), { headers: headers })
+            .map(response => {});
     }
     
     delete(mediaItem) {
         return this.http.delete(`mediaitems/${mediaItem.id}`)
-            .map(response =>{});
+            .map(response => {});
     }
     
     mediaItems = [

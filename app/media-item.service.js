@@ -71,9 +71,9 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                     ];
                 }
                 MediaItemService.prototype.get = function (medium) {
-                    var searchParam = new http_1.URLSearchParams();
-                    searchParam.append('medium', medium);
-                    return this.http.get('mediaitems', { search: searchParam })
+                    var searchParams = new http_1.URLSearchParams();
+                    searchParams.append('medium', medium);
+                    return this.http.get('mediaitems', { search: searchParams })
                         .map(function (response) {
                         return response.json().mediaItems;
                     });
@@ -81,8 +81,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                 MediaItemService.prototype.add = function (mediaItem) {
                     var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
                     return this.http.post('mediaitems', JSON.stringify(mediaItem), { headers: headers })
-                        .map(function (response) {
-                    });
+                        .map(function (response) { });
                 };
                 MediaItemService.prototype.delete = function (mediaItem) {
                     return this.http.delete("mediaitems/" + mediaItem.id)
