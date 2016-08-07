@@ -7,7 +7,6 @@ import {MediaItemService} from './media-item.service';
     selector: 'media-item-list',
     directives: [MediaItemComponent],
     pipes: [CategoryListPipe],
-    providers: [MediaItemService],
     templateUrl: 'app/media-item-list.component.html',
     styleUrls: ['app/media-item-list.component.css']
 })
@@ -20,7 +19,6 @@ export class MediaItemListComponent {
 
     onMediaItemDeleted(mediaItem) {
         this.mediaItemService.delete(mediaItem);
-        console.log(this.mediaItemService.delete(mediaItem));
     }
     
     mediaItems;

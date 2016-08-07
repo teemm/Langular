@@ -36,14 +36,12 @@ System.register(['angular2/core', './media-item.component', './category-list.pip
                 };
                 MediaItemListComponent.prototype.onMediaItemDeleted = function (mediaItem) {
                     this.mediaItemService.delete(mediaItem);
-                    console.log(this.mediaItemService.delete(mediaItem));
                 };
                 MediaItemListComponent = __decorate([
                     core_1.Component({
                         selector: 'media-item-list',
                         directives: [media_item_component_1.MediaItemComponent],
                         pipes: [category_list_pipe_1.CategoryListPipe],
-                        providers: [media_item_service_1.MediaItemService],
                         templateUrl: 'app/media-item-list.component.html',
                         styleUrls: ['app/media-item-list.component.css']
                     }), 
