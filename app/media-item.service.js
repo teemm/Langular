@@ -79,13 +79,14 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                     });
                 };
                 MediaItemService.prototype.add = function (mediaItem) {
-                    this.mediaItems.push(mediaItem);
+                    var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+                    return this.http.post('mediaitems', JSON.stringify(mediaItem), { headers: headers })
+                        .map(function (response) {
+                    });
                 };
                 MediaItemService.prototype.delete = function (mediaItem) {
-                    var index = this.mediaItems.indexOf(mediaItem);
-                    if (index >= 0) {
-                        this.mediaItems.splice(index, 1);
-                    }
+                    return this.http.delete("mediaitems/" + mediaItem.id)
+                        .map(function (response) { });
                 };
                 MediaItemService = __decorate([
                     core_1.Injectable(), 

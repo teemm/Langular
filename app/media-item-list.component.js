@@ -37,7 +37,11 @@ System.register(['angular2/core', './media-item.component', './category-list.pip
                     this.getMediaItems(this.medium);
                 };
                 MediaItemListComponent.prototype.onMediaItemDeleted = function (mediaItem) {
-                    this.mediaItemService.delete(mediaItem);
+                    var _this = this;
+                    this.mediaItemService.delete(mediaItem)
+                        .subscribe(function () {
+                        _this.getMediaItems(_this.medium);
+                    });
                 };
                 MediaItemListComponent.prototype.getMediaItems = function (medium) {
                     var _this = this;

@@ -2,6 +2,7 @@ import {Component, Inject} from 'angular2/core';
 import {Control, Validators, FormBuilder} from 'angular2/common';
 import {MediaItemService} from './media-item.service';
 import {LOOKUP_LISTS} from './providers';
+import {subscribeOn} from "rxjs/operator/subscribeOn";
 
 @Component({
     selector: 'media-item-form',
@@ -37,6 +38,7 @@ export class MediaItemFormComponent {
     }
 
     onSubmit(mediaItem) {
-        this.mediaItemService.add(mediaItem);
+        this.mediaItemService.add(mediaItem)
+            .subscribe();
     }
 }

@@ -58,7 +58,8 @@ System.register(['angular2/core', 'angular2/common', './media-item.service', './
                     return { 'year': { 'min': minYear, 'max': maxYear } };
                 };
                 MediaItemFormComponent.prototype.onSubmit = function (mediaItem) {
-                    this.mediaItemService.add(mediaItem);
+                    this.mediaItemService.add(mediaItem)
+                        .subscribe();
                 };
                 MediaItemFormComponent = __decorate([
                     core_1.Component({
