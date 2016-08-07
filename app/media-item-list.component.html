@@ -1,8 +1,6 @@
-<heading>
-    <div>{{mediaItems | categoryList | uppercase}}</div>
-    <div>{{categoryList}}</div>
-</heading>
-
+<header>
+    <div>{{ mediaItems | categoryList }}</div>
+</header>
 <section>
     <media-item *ngFor="#mediaItem of mediaItems"
         [mediaItemToWatch]="mediaItem"

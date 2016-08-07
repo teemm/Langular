@@ -11,34 +11,34 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var categortListPipe;
+    var CategoryListPipe;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            categortListPipe = (function () {
-                function categortListPipe() {
+            CategoryListPipe = (function () {
+                function CategoryListPipe() {
                 }
-                categortListPipe.prototype.transform = function (mediaItems) {
+                CategoryListPipe.prototype.transform = function (mediaItems) {
                     var categories = [];
-                    mediaItems.forEach(function (mediaItems) {
-                        if (categories.indexOf(mediaItems.category) <= -1) {
-                            categories.push(mediaItems.category);
+                    mediaItems.forEach(function (mediaItem) {
+                        if (categories.indexOf(mediaItem.category) <= -1) {
+                            categories.push(mediaItem.category);
                         }
                     });
                     return categories.join(', ');
                 };
-                categortListPipe = __decorate([
+                CategoryListPipe = __decorate([
                     core_1.Pipe({
                         name: 'categoryList'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], categortListPipe);
-                return categortListPipe;
+                ], CategoryListPipe);
+                return CategoryListPipe;
             }());
-            exports_1("categortListPipe", categortListPipe);
+            exports_1("CategoryListPipe", CategoryListPipe);
         }
     }
 });
